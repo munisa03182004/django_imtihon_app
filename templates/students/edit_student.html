@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}
+    Change student
+{% endblock %}
+
+{% block content %}
+    <h1>Change student info</h1>
+    <form action=""method="post" enctype="multipart/form-data">
+        {% csrf_token %} 
+        <fieldset>
+            <legend>Insert student new data</legend>
+            <p>
+                <label for="name">Name:</label>
+                <input type="text" name = "name" value="{{students.name}}" required ><br>
+
+            </p>
+            <p>
+                <label for = "age">Age:</label>
+                <input type="number" name="age" min ="20" max="30"value="{{students.age}}" required><br>
+
+            </p>
+            <p>
+                <label for="mark_1">mathematical analysis</label>
+                <input type="number" name="mark_1" min="2" max="5" value="{{students.mark_1}}"required><br>
+            </p>
+            <p>
+                <label for="mark_2">physics</label>
+                <input type="number" name="mark_2" min="2" max="5" value="{{students.mark_2}}" required><br>
+            </p>
+            <p>
+                <label for="mark_3">geometry</label>
+                <input type="number" name="mark_3" min="2" max="5" value="{{students.mark_3}}" required><br>
+            </p>
+            <p>
+                <label for="mark_4">artificial intelligence</label>
+                <input type="number" name="mark_4" min="2" max="5"  value="{{students.mark_4}}" required><br>
+            </p>
+            <p>
+                <label for="mark_5">philosophy</label>
+                <input type="number" name="mark_5" min="2" max="5" value="{{students.mark_5}}" required><br>
+            </p>
+            <p>
+                <label for="mark_6">algebra</label>
+                <input type="number" name="mark_6" min="2" max="5" value="{{students.mark_6}}" required><br>
+            </p>
+            <p>
+                <label for="mark_7">history</label>
+                <input type="number" name="mark_7" min="2" max="5" value="{{students.mark_7}}" required><br>
+            </p>
+            <p>
+                <label for="image">Student image</label>
+                <input type="file" name="image" required value=" Choose students image"><br>
+            </p>
+        </fieldset> 
+        <input type="submit" value="Save changes">
+    </form>
+{% endblock %}

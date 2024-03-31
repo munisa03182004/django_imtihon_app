@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Students info
+{% endblock %}
+
+{% block content %}
+    <h1>{{students.name}}</h1>
+    <img src="{% static students.image %}" alt="{{student.name}}" style="float: right; width: 150px">
+    <h2>Marks:</h2>
+    
+        
+    <ul>
+        <li>{{students.mark_1}}</li>
+        <li>{{students.mark_2}}</li>
+        <li>{{students.mark_3}}</li>
+        <li>{{students.mark_4}}</li>
+        <li>{{students.mark_5}}</li>
+        <li>{{students.mark_6}}</li>
+        <li>{{students.mark_7}}</li>
+    </ul>
+    <p>
+        <a href="{% url 'student_info' students.id}">EDIT</a>
+    </p>
+
+    
+{% endblock %}
+    

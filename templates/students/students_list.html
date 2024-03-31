@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+    Students list
+{% endblock %}
+
+{% block content %}
+    <h1>Students list</h1>
+    <form action ="" method="get">
+        <label for = "name">Name:</label>
+        <input type="text" name="name" placeholder="Insret name...">
+        <input type="submit" value="Search">
+    </form>
+    <table class="table table-primary">
+        <tr>
+            <th>N</th>
+            <th>FULL NAME</th>
+            <th>AGE</th>
+            <th>ACTION</th>
+            
+
+        </tr>
+    
+    
+
+    {% for s in student %}
+        <tr>  
+            <td>{{forloop.counter}}</td> 
+            <td>{{s.name}}</td>
+            <td>{{s.age}}</td>
+            <td>
+                <a href ="{% url 'student_info'  s.id %}"> See all infos</a>
+            </td>
+        </tr>
+    {% endfor %}
+    
+{% endblock %}
+        
+        
+            
+    </table>
